@@ -7,9 +7,9 @@ FROM eclipse-temurin:17-jre
 WORKDIR /app
 COPY --from=build /app/build/libs/*.jar app.jar
 
-ENV PDFTOOLS_AUTH=true
-ENV PDFTOOLS_USERNAME=admin
-ENV PDFTOOLS_PASSWORD=yourStrongPass
+#ENV PDFTOOLS_AUTH=true
+#ENV PDFTOOLS_USERNAME=admin
+#ENV PDFTOOLS_PASSWORD=yourStrongPass
 
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
