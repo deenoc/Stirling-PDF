@@ -1,7 +1,7 @@
-FROM gradle:8.2.1-jdk17 AS build
+FROM eclipse-temurin:17-jdk AS build
 WORKDIR /app
-COPY --chown=gradle:gradle . .
-RUN gradle clean build -x test
+COPY . .
+RUN chmod +x ./gradlew && ./gradlew clean build -x test
 
 FROM eclipse-temurin:17-jre
 WORKDIR /app
